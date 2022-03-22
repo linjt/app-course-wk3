@@ -42,13 +42,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     flexWrap:"nowrap",
     color: "#131313",
-    width: '100%'
+    width: '100%',
+    marginTop: 8
   },
   headerContentStyle: {
       fontSize: 15,
       fontWeight: '600',
       color: "#666666",
-      width: '100%'
+      width: '100%',
   },
   cardSectionStyle: {
       // padding: 5,

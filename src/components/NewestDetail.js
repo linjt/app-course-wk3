@@ -19,7 +19,16 @@ const BookDetail = ( { book , navigation}) => {
         </View>
       </View>  
       <View style={styles.headerContainerStyle}>
-        {/* put star rating there */}
+        <StarRating 
+            disabled={true}
+            maxStars={5}
+            fullStarColor="#FFC41F"
+            starSize={20}
+            rating={book.star}
+            // selectedStar={(rating) => onStarRatingPress(rating)} 
+            starStyle={{ marginTop: 10,padding: 0 }}
+            containerStyle = {{width: 120}}
+        />
         <Text style={styles.headerTitleStyle}>{book.title}</Text>
         <Text style={styles.headerContentStyle}>{book.author}</Text>
       </View>   
@@ -49,7 +58,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         flexWrap:"nowrap",
         color: "#131313",
-        width: '100%'
+        width: '100%',
+        marginTop: 5
     },
     headerContentStyle: {
         fontSize: 15,
@@ -63,7 +73,7 @@ const styles = StyleSheet.create({
     imageStyle: {
         height: 270,
         width: 190,
-    }
+    },
 });
 
 export default BookDetail;

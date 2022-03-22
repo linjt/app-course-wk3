@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Pressable, ScrollView, Text, View, Image, Button } from 'react-native';
 
+import StarRating from 'react-native-star-rating';
+
 const DetailScreen = ({ route }) => {
   const { title, 
     author,
@@ -23,7 +25,15 @@ const DetailScreen = ({ route }) => {
           <Text style={{fontWeight:'600',fontSize:18, textAlign:'center',color:"#666",paddingTop:10}}> {author} </Text>         
         </View>
         <View style={styles.starcontainerStyle}>
-          {/* for star */}
+          <StarRating
+              disabled={true}
+              maxStars={5}
+              rating={star}
+              fullStarColor="#FFC41F"
+              starSize={25}
+              letterSpacing={20}
+              containerStyle = {{width: 150 ,marginRight:10}}
+          />
           <Text style={{fontWeight:'600',fontSize:18, textAlign:'center',color:"#131313",paddingTop:10}}> {star}.0 </Text>         
           <Text style={{fontWeight:'600',fontSize:18, textAlign:'center',color:"#666",paddingTop:10}}> /5.0 </Text>   
         </View>
@@ -52,7 +62,7 @@ const styles = StyleSheet.create({
   starcontainerStyle:{
     flex: 1,
     flexDirection:"row",
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'center',
   },
   imageStyle: {
