@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, Pressable} from "react-native";
 
 import StarRating from 'react-native-star-rating';
 
-const BookDetail = ( { book , navigation}) => {
+const BookDetail = ( { star, book , navigation}) => {
    return (
      <View style={styles.ContainerStyle}>
       <View style={styles.cardContainerStyle}>
@@ -19,7 +19,9 @@ const BookDetail = ( { book , navigation}) => {
         </View>
       </View>  
       <View style={styles.headerContainerStyle}>
-        <StarRating 
+        <View>
+          {star?(
+            <StarRating 
             disabled={true}
             maxStars={5}
             fullStarColor="#FFC41F"
@@ -28,7 +30,9 @@ const BookDetail = ( { book , navigation}) => {
             // selectedStar={(rating) => onStarRatingPress(rating)} 
             starStyle={{ marginTop: 10,padding: 0 }}
             containerStyle = {{width: 120}}
-        />
+            />
+          ):null}
+        </View>
         <Text style={styles.headerTitleStyle}>{book.title}</Text>
         <Text style={styles.headerContentStyle}>{book.author}</Text>
       </View>   

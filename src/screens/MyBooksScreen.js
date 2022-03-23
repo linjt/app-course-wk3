@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 const MyBooksScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.textStyle}>Here is MyBooksScreen.js</Text>
+      <Text style={styles.textStyle}>Here is MyBooksScreen</Text>
     </View>
   );
 }

@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 const WishListScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.textStyle}>Here is WishListScreen.js</Text>
+      <Text style={styles.textStyle}>Here is WishListScreen</Text>
     </View>
   );
 }

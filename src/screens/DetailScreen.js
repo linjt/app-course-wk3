@@ -24,19 +24,21 @@ const DetailScreen = ({ route }) => {
           <Text style={{fontWeight:'bold',paddingTop:20,fontSize:30,textAlign:'center'}}> {title} </Text>
           <Text style={{fontWeight:'600',fontSize:18, textAlign:'center',color:"#666",paddingTop:10}}> {author} </Text>         
         </View>
-        <View style={styles.starcontainerStyle}>
-          <StarRating
-              disabled={true}
-              maxStars={5}
-              rating={star}
-              fullStarColor="#FFC41F"
-              starSize={25}
-              letterSpacing={20}
-              containerStyle = {{width: 150 ,marginRight:10}}
-          />
-          <Text style={{fontWeight:'600',fontSize:18, textAlign:'center',color:"#131313",paddingTop:10}}> {star}.0 </Text>         
-          <Text style={{fontWeight:'600',fontSize:18, textAlign:'center',color:"#666",paddingTop:10}}> /5.0 </Text>   
-        </View>
+        { star ?(
+          <View style={styles.starcontainerStyle}>
+            <StarRating
+                disabled={true}
+                maxStars={5}
+                rating={star}
+                fullStarColor="#FFC41F"
+                starSize={25}
+                letterSpacing={20}
+                containerStyle = {{width: 150 ,marginRight:10}}
+            />
+            <Text style={{fontWeight:'600',fontSize:18, textAlign:'center',color:"#131313",paddingTop:10}}> {star}.0 </Text>         
+            <Text style={{fontWeight:'600',fontSize:18, textAlign:'center',color:"#666",paddingTop:10}}> /5.0 </Text>   
+          </View>
+        ):null}
         <Text style={{lineHeight: 18,fontSize:15, textAlign:'center',marginTop:20, lineHeight:25 }}>{'\t'}{description}</Text>
         <View style={styles.cardContainerStyle}>
           <Pressable style={styles.button}>

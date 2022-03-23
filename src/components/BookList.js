@@ -1,39 +1,24 @@
 import React from "react";
 import { View, Text, FlatList, SectionList, StyleSheet } from "react-native";
-import PopularBooksDetail from "./PopularBooksDetail";
-import NewestDetail from "./NewestDetail";
+import BookDetail from "./BookDetail";
 import sections from "../json/book_section.json";
 
 const BookList = ({ navigation }) => {
-  const renderItem = ({ item, section }) => {
-    if (section.starRating) {
-      return null;
-    }
-    return (
-      <FlatList
-          horizontal={true}
-          data={section.data}
-          renderItem={({ item }) => <PopularBooksDetail style={styles.PopularBooksContainer} book={item}/>}
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={ item => item.title }
-        />
-      
-    )
-  };
   const renderSectionHeader = ({section}) => (
     <View>
       <Text style={styles.sectionHeader}>{section.title}</Text>
-      {section.starRating ? (
-        <FlatList
-          horizontal={true}
-          data={section.data}
-          renderItem={({ item }) => <NewestDetail book={item} navigation={navigation}/>}
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={ item => item.title }
-        />
-      ) : null}
+      <FlatList
+        horizontal={true}
+        data={section.data}
+        renderItem={({ item }) => <BookDetail star={section.starRating} book={item} navigation={navigation}/>}
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={ item => item.title }
+      />
     </View>
   );
+  const renderItem = () => {
+      return null;
+  };
   return (
     <SectionList 
       sections={sections}

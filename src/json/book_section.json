@@ -7,17 +7,23 @@
          {
             "title": "Fashionopolis",
             "author": "Dana Thomas",
-            "image": "https://raw.githubusercontent.com/linjt/app-course-wk3/master/img/img_book_fashinopolis.png"
+            "price":36.8,
+            "image": "https://raw.githubusercontent.com/linjt/app-course-wk3/master/img/img_book_fashinopolis.png",
+            "description":"A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."       
          },
          {
             "title": "Chanel",
             "author": "Patrick Mauriès",
-            "image": "https://raw.githubusercontent.com/linjt/app-course-wk3/master/img/img_book_chanel.png"
+            "price":44.79,
+            "image": "https://raw.githubusercontent.com/linjt/app-course-wk3/master/img/img_book_chanel.png",
+            "description":"A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."       
          },
          {
             "title": "Calligraphy",
             "author": "June & Lucy",
-            "image": "https://raw.githubusercontent.com/linjt/app-course-wk3/master/img/img_book_calligraphy.png"
+            "price":46.03,
+            "image": "https://raw.githubusercontent.com/linjt/app-course-wk3/master/img/img_book_calligraphy.png",
+            "description":"A spectacular visual journey through 40 years of haute couture from one of the best-known and most trend-setting brands in fashion."       
          }
    ]},
    {
