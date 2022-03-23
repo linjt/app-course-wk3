@@ -1,10 +1,12 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { TouchableOpacity } from 'react-native';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import BookScreen from '../screens/BookScreen';
 import DetailScreen from '../screens/DetailScreen';
@@ -78,7 +80,11 @@ const MyTabs = () => {
   );
 }
 
-const StackNavigator = () => {
+const StackNavigator = ({ navigation: { goBack }}) => {
+  const [toggle, setToggle] = useState(true);
+  const toggleFunction = () => {
+      setToggle(!toggle);
+  };
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -89,9 +95,20 @@ const StackNavigator = () => {
           headerStyle:{
             backgroundColor: "#FFF",
           },
-          headerShadowVisible: false, //把header的shadow關掉
-          headerLeft:()=>(<FontAwesome name="navicon" size={25} /> ),
-          headerRight:()=>(<MaterialCommunityIcons name="bookmark-outline" size={30} /> )
+          headerShadowVisible: false, //把header的shadow關掉 
+          headerLeft:()=>(
+            <TouchableOpacity>
+              <FontAwesome name="navicon" size={25} />
+            </TouchableOpacity>
+          ),
+          headerRight:()=>(
+            <TouchableOpacity>
+              <FontAwesome 
+                name="search" 
+                size={27}
+              />            
+            </TouchableOpacity>
+          ),
         }}
       />
       <Stack.Screen
@@ -103,7 +120,20 @@ const StackNavigator = () => {
             backgroundColor: "#FFF",
           },
           headerShadowVisible: false, //把header的shadow關掉
-          headerRight:()=>(<MaterialCommunityIcons name="bookmark-outline" size={30} /> )
+          headerLeft:()=>(
+            <TouchableOpacity
+              onPress={() => goBack()}
+            >
+              <Ionicons name="chevron-back" size={27} />
+            </TouchableOpacity>
+          ),
+          headerRight:()=>(
+            <TouchableOpacity  onPress={() => toggleFunction()}>
+              {toggle?
+                <FontAwesome name="bookmark-o" color="#666" size={27} /> : <FontAwesome name="bookmark" color="#6200EE" size={27} />   
+              }
+            </TouchableOpacity>
+          )
         }}
       />
     </Stack.Navigator>
