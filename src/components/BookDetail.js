@@ -28,7 +28,7 @@ const BookDetail = ( { star, book , navigation}) => {
             starSize={20}
             rating={book.star}
             // selectedStar={(rating) => onStarRatingPress(rating)} 
-            starStyle={{ marginTop: 10,padding: 0 }}
+            starStyle={{ marginTop: 8,padding: 0 }}
             containerStyle = {{width: 120}}
             />
           ):null}

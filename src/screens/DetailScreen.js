@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     paddingTop: 20,
-    paddingBottom: 20
+    paddingBottom: 40
   },  
   starcontainerStyle:{
     flex: 1,

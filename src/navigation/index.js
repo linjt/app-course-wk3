@@ -30,7 +30,7 @@ const MyTabs = () => {
       initialRouteName="StackNavigator"
       screenOptions={{
         tabBarActiveTintColor: '#6200EE',
-        headerShown: false
+        headerShown: false,
       }}
     >
       <Tab.Screen 
@@ -38,14 +38,18 @@ const MyTabs = () => {
         component={StackNavigator}
         options={{
           headerShown: false,
-          headerTitleStyle: {
-            fontWeight: '500',
-            fontSize: 30
-          },
           title: "Home",
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={30} />
           ),
+          tabBarItemStyle:{
+            padding: 2
+          },
+          tabBarLabelStyle: {
+            fontWeight: '600',
+            fontSize: 12,
+            letterSpacing: 0.6,
+          }
         }}
       />
       <Tab.Screen 
@@ -53,13 +57,17 @@ const MyTabs = () => {
         component={WishListScreen} 
         options={{
           title: "Wishlist",
-          headerTitleStyle: {
-            fontWeight: '500',
-            fontSize: 30
-          },
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="bookmark" color={color} size={30} />
           ),
+          tabBarItemStyle:{
+            padding: 2
+          },
+          tabBarLabelStyle: {
+            fontWeight: '600',
+            fontSize: 12,
+            letterSpacing: 0.6,
+          }
         }}
       />
       <Tab.Screen 
@@ -67,13 +75,20 @@ const MyTabs = () => {
         component={MyBooksScreen} 
         options={{
           title: "My Books",
-          headerTitleStyle: {
-            fontWeight: '500',
-            fontSize: 30
+          headerTitleContainerStyle:{
+            margin: 100
           },
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="book-open" color={color} size={30} />
           ),
+          tabBarItemStyle:{
+            padding: 2
+          },
+          tabBarLabelStyle: {
+            fontWeight: '600',
+            fontSize: 12,
+            letterSpacing: 0.6,
+          }
         }}
       />
     </Tab.Navigator>
