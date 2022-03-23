@@ -22,7 +22,7 @@ const DetailScreen = ({ route }) => {
         />
         <View style={styles.cardContainerStyle}>
           <Text style={{fontWeight:'bold',paddingTop:20,fontSize:30,textAlign:'center'}}> {title} </Text>
-          <Text style={{fontWeight:'600',fontSize:18, textAlign:'center',color:"#666",paddingTop:10}}> {author} </Text>         
+          <Text style={{fontWeight:'600',fontSize:18, textAlign:'center',color:"#666",paddingTop:5}}> {author} </Text>         
         </View>
         { star ?(
           <View style={styles.starcontainerStyle}>
